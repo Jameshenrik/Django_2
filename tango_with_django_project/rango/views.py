@@ -3,7 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Clap along if you feel like happiness is for you <a href='about'>About</a>")
+    context_dict = {'boldmessage':' like a room without a roof!'}
+    return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
-    return HttpResponse("Clap along if you know that happiness is the truth")
+    context_dict = {'boldmessage': 'This tutorial was created by James'}
+    return render(request, 'rango/about.html')
